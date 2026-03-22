@@ -15,7 +15,7 @@ const int DIAG_1 = 2;
 
 //Constants
 //Define time delay between pulses and servo sequence.
-const int c_DELAY = 50000;
+const int c_DELAY = 500000;
 //byte SERVO_SEQUENCE [8] = {0b0001,0b0011,0b0010,0b0110,0b0100,0b1100,0b1000,0b1001};
 const byte c_SERVO_SEQUENCE [8] = {0b1110,0b1100,0b1101,0b1001,0b1011,0b0011,0b0111,0b0110};
 //byte SERVO_SEQUENCE3 [4] = {0b0011,0b0101,0b1100,0b1010};
@@ -25,13 +25,13 @@ const int c_SERVO_POS_COUNT = 4;
 
 
 void setup() {
-  //Configure output pins.
+  // Configure output pins.
   pinMode(S_IN, OUTPUT);
   pinMode(CLK, OUTPUT);
   pinMode(STROBE, OUTPUT);
   pinMode(HOME, OUTPUT);
 
-  //Configure input pins.
+  // Configure input pins.
   pinMode(ALL_HOMED, INPUT);
   pinMode(DIAG_3, INPUT);
   pinMode(DIAG_2, INPUT);
@@ -53,57 +53,75 @@ byte SERVO_SEQ[2];
 //}
 
 //Initialze Servo Rotation Counts
-int SERVO_ROT[2] = {20,24};
+int SERVO_ROT[2] = {2,2};
   //SERVO_ROT[1]=8;
   //SERVO_ROT[0]=4096;
 
+
+
 //DIAGNOSTIC
-int button_3, button_2, button_1;
+int i_all_homed, button_3, button_2, button_1;
 
 //Count
 int Rotations = 0;
 
-  while(1){
+bool Stop_Rotate = 0;
+bool Home_Char = 0; //Flip between rotating to home and a charachter. Home = 0, Charachter = 1 
 
-  //Loop for each servo
-  for (int i = c_SERVO_COUNT - 1; i >= 0; i--) {
-
-    //Loop for each data point and send down the shift register, 4 data points per servo.
-    for(int j = c_SERVO_POS_COUNT - 1; j >= 0; j--){
-    digitalWrite(S_IN,bitRead(SERVO_OUT[i],j));
-    //delayMicroseconds(c_DELAY);
-    pin_Pulse(CLK,c_DELAY,HIGH);
-    }              
-  }
-
-  //Once data has been updated in the shift registers, strobe to update outputs     
-  pin_Pulse(STROBE,c_DELAY,HIGH);
-
-  // If more rotations are needed, update servo outputs for next rotation
-  for (int k = c_SERVO_COUNT - 1; k >= 0; k--){
-    if(Rotations < SERVO_ROT[k]){
-      SERVO_SEQ[k] = servo_Rotate(&SERVO_OUT[k],SERVO_SEQ[k],1);
-    }
-  }
-
-  Rotations++;
-
-  //DIAGNOSTIC CODE
-  // read the state of the pushbutton value:
+while(Stop_Rotate == 0){
+  
+  // Read the state of the pushbuttons:
+  i_all_homed = digitalRead(ALL_HOMED);
   button_3 = digitalRead(DIAG_3);
   button_2 = digitalRead(DIAG_2);
   button_1 = digitalRead(DIAG_1);
 
-  if (button_3 == HIGH || button_2 == HIGH || button_1 == HIGH)
-  {
-    digitalWrite(HOME, HIGH);
-  }else
-    digitalWrite(HOME, LOW);
+  // Update data in shift register.
+  // Loop for each servo
+  for (int i = c_SERVO_COUNT - 1; i >= 0; i--) {
+
+    // Loop for each data point and send down the shift register, 4 data points per servo.
+    for(int j = c_SERVO_POS_COUNT - 1; j >= 0; j--){
+    digitalWrite(S_IN, bitRead(SERVO_OUT[i], j));
+    pin_Pulse(CLK, c_DELAY, HIGH);
+    }              
   }
 
+  // Once data has been updated in the shift registers, strobe to update outputs     
+  pin_Pulse(STROBE, c_DELAY, HIGH);
+  Rotations++;
+
+  // Default to stop rotation, override if continued rotation is necessary.
+  Stop_Rotate = 1;
+
+  // If more rotations are needed, update servo outputs for next rotation
+  for (int k = c_SERVO_COUNT - 1; k >= 0; k--){
+
+    if(Home_Char == 1)
+    {
+      // When doing charachter rotation, determine on a per charachter basis
+      if(Rotations < SERVO_ROT[k]){
+        SERVO_SEQ[k] = servo_Rotate(&SERVO_OUT[k], SERVO_SEQ[k], 1);
+        Stop_Rotate = 0;
+      }
+    }else{
+      // When homing, continue rotating until the all homed signal has been received.
+      if(i_all_homed != 1)
+      {
+        Rotations = 0;
+        Stop_Rotate = 0;
+      }else{
+        break;
+      }
+      SERVO_SEQ[k] = servo_Rotate(&SERVO_OUT[k], SERVO_SEQ[k], 1);
+    }
+  }
 }
 
-byte servo_Rotate(byte* SERVO,byte SEQ,bool DIR){
+delay(5000);
+}
+
+byte servo_Rotate(byte* SERVO, byte SEQ, bool DIR){
   byte SEQ_NEXT;
 
   if(DIR){
@@ -126,7 +144,7 @@ return SEQ_NEXT;
 
 void pin_Pulse(int pin, int delay, bool high){
 
-  if(high = 1){
+  if(high == 1){
     digitalWrite(pin, HIGH);  
     delayMicroseconds(delay);
     digitalWrite(pin, LOW);
