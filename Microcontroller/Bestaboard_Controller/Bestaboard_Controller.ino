@@ -3,19 +3,19 @@
 
 //Define output locations
 const int S_IN = 13; //Serial Data
-const int CLK = 12; //Clock for shift register shifting
-const int STROBE = 11; //Updates outputs
-const int HOME = 10; //Home command.
+const int CLK = 11; //Clock for shift register shifting
+const int STROBE = 9; //Updates outputs
+const int HOME = 7; //Home command.
 
 //Define input locations
-const int ALL_HOMED = 9; // All charachters are homed.
+const int ALL_HOMED = 5; // All charachters are homed.
 const int DIAG_3 = 4;
 const int DIAG_2 = 3;
 const int DIAG_1 = 2;
 
 //Constants
 //Define time delay between pulses and servo sequence.
-const int c_DELAY = 500000;
+const int c_DELAY = 50000;
 //byte SERVO_SEQUENCE [8] = {0b0001,0b0011,0b0010,0b0110,0b0100,0b1100,0b1000,0b1001};
 const byte c_SERVO_SEQUENCE [8] = {0b1110,0b1100,0b1101,0b1001,0b1011,0b0011,0b0111,0b0110};
 //byte SERVO_SEQUENCE3 [4] = {0b0011,0b0101,0b1100,0b1010};
@@ -76,14 +76,21 @@ while(Stop_Rotate == 0){
   button_2 = digitalRead(DIAG_2);
   button_1 = digitalRead(DIAG_1);
 
+  //If homing, send out the home command.
+  //if(Home_Char == 0){
+    digitalWrite(HOME, 1);
+  //}else{
+  //  digitalWrite(HOME, 0);
+  //}
+
   // Update data in shift register.
-  // Loop for each servo
+  // Loop for each servo.
   for (int i = c_SERVO_COUNT - 1; i >= 0; i--) {
 
     // Loop for each data point and send down the shift register, 4 data points per servo.
     for(int j = c_SERVO_POS_COUNT - 1; j >= 0; j--){
-    digitalWrite(S_IN, bitRead(SERVO_OUT[i], j));
-    pin_Pulse(CLK, c_DELAY, HIGH);
+      digitalWrite(S_IN, bitRead(SERVO_OUT[i], j));
+      pin_Pulse(CLK, c_DELAY, HIGH);
     }              
   }
 
@@ -99,7 +106,7 @@ while(Stop_Rotate == 0){
 
     if(Home_Char == 1)
     {
-      // When doing charachter rotation, determine on a per charachter basis
+      // When doing charachter rotation, determine on a per charachter basis 
       if(Rotations < SERVO_ROT[k]){
         SERVO_SEQ[k] = servo_Rotate(&SERVO_OUT[k], SERVO_SEQ[k], 1);
         Stop_Rotate = 0;
