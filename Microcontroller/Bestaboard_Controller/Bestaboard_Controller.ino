@@ -1,5 +1,14 @@
-//#include <AccelStepper.h>
-//#include <MultiStepper.h>
+#define DEBUG 0 // Set to 0 to disable debug output
+
+#if DEBUG
+#define DEBUG_PRINT(x) Serial.print(x);
+#define DEBUG_PRINTLN(x) Serial.println(x);
+#define DEBUG_BEGIN(x) Serial.begin(x);
+#else
+#define DEBUG_PRINT(x);
+#define DEBUG_PRINTLN(x);
+#define DEBUG_BEGIN(x);
+#endif
 
 //Define output locations
 const int DATA = 12; //Serial Data
@@ -14,14 +23,16 @@ const int DIAG_1 = 2;
 
 //Constants
 //byte SERVO_SEQUENCE [8] = {0b0001,0b0011,0b0010,0b0110,0b0100,0b1100,0b1000,0b1001};
-const byte c_SERVO_SEQUENCE [8] = {0b1110,0b1100,0b1101,0b1001,0b1011,0b0011,0b0111,0b0110};
+const byte c_SERVO_SEQUENCE [8] = {0b1110,0b1100,0b1101,0b1001,0b1011,0b0011,0b0111,0b0110}; //rotates
+//const byte c_SERVO_SEQUENCE [8] = {0b1111,0b1111,0b1111,0b1111,0b0000,0b0000,0b0000,0b0000};
+
 //byte SERVO_SEQUENCE3 [4] = {0b0011,0b0101,0b1100,0b1010};
 //byte SERVO_SEQUENCE4 [4] = {0b1110,0b1101,0b1011,0b0111};
 const int c_SERVO_COUNT = 2;
 const int c_SERVO_POS_COUNT = 4;
-const int c_DELAY_SETTING [3] = {50000, 5000, 1000};
+const int c_DELAY_SETTING [3] = {500000, 5000, 500};
 
-//Interrupt variables
+//Interrupt volatile variables
 volatile int v_DELAY = c_DELAY_SETTING[0]; //Define time delay between pulses and servo sequence.
 
 void setup() {
@@ -37,21 +48,24 @@ void setup() {
   // Configure interrupt pins.
   pinMode(CHANGE_DELAY, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(CHANGE_DELAY), change_delay, FALLING);
+
+  delay(2000);
+
 }
 
 void loop() {
 
 //Initalize Servo Outputs (0-15)
-byte SERVO_OUT[2]; 
-//for (int k = 1; k >= 0; k--){ 
-//  SERVO_OUT[k]=0;
-//}
+byte SERVO_OUT[c_SERVO_COUNT]; 
+for (int k = 1; k >= 0; k--){ 
+  SERVO_OUT[k] = c_SERVO_SEQUENCE[1];
+}
 
 //Initialze Servo Sequence Numbers (1-8)
-byte SERVO_SEQ[2];
-//for (int k = 1; k >= 0; k--){ 
-//  SERVO_SEQ[k]=1;
-//}
+byte SERVO_SEQ[c_SERVO_COUNT];
+for (int k = 1; k >= 0; k--){ 
+  SERVO_SEQ[k]=1;
+}
 
 //Initialze Servo Rotation Counts
 int SERVO_ROT[2] = {2,2};
@@ -73,21 +87,28 @@ while(Stop_Rotate == 0){
   i_all_homed = digitalRead(ALL_HOMED);
 
   //If homing, send out the home command.
-  //if(Home_Char == 0){
+  if(Home_Char == 0){
     digitalWrite(HOME, 1);
-  //}else{
-  //  digitalWrite(HOME, 0);
-  //}
+  }else{
+    digitalWrite(HOME, 0);
+  }
 
   // Update data in shift register.
   // Loop for each servo.
   for (int i = c_SERVO_COUNT - 1; i >= 0; i--) {
 
+    DEBUG_PRINT("Data Servo Loop:")
+    DEBUG_PRINTLN(i);
+    DEBUG_PRINT("Data:");
+
     // Loop for each data point and send down the shift register, 4 data points per servo.
     for(int j = c_SERVO_POS_COUNT - 1; j >= 0; j--){
       digitalWrite(DATA, bitRead(SERVO_OUT[i], j));
       pin_Pulse(SHIFT, v_DELAY, HIGH);
-    }              
+
+      DEBUG_PRINT(bitRead(SERVO_OUT[i], j));
+    }
+    DEBUG_PRINTLN("");              
   }
 
   // Once data has been updated in the shift registers, strobe to update outputs     
@@ -104,19 +125,19 @@ while(Stop_Rotate == 0){
     {
       // When doing charachter rotation, determine on a per charachter basis 
       if(Rotations < SERVO_ROT[k]){
-        SERVO_SEQ[k] = servo_Rotate(&SERVO_OUT[k], SERVO_SEQ[k], 1);
+        SERVO_SEQ[k] = servo_Rotate(&SERVO_OUT[k], SERVO_SEQ[k], 0);
         Stop_Rotate = 0;
       }
     }else{
       // When homing, continue rotating until the all homed signal has been received.
       if(i_all_homed != 1)
       {
-        Rotations = 0;
+        SERVO_SEQ[k] = servo_Rotate(&SERVO_OUT[k], SERVO_SEQ[k], 0);
         Stop_Rotate = 0;
       }else{
+        Rotations = 0;
         break;
       }
-      SERVO_SEQ[k] = servo_Rotate(&SERVO_OUT[k], SERVO_SEQ[k], 1);
     }
   }
 }
@@ -164,13 +185,17 @@ void pin_Pulse(int pin, int delay, bool high){
 
 //--------------------Interrupts----------------------//
 void change_delay(){
+  static unsigned long last_interrupt_time = 0;
+  unsigned long interrupt_time = millis();
 
-  if (v_DELAY == c_DELAY_SETTING[0]){
-    v_DELAY = c_DELAY_SETTING[1];
-  }else if(v_DELAY == c_DELAY_SETTING[1]) {
-    v_DELAY = c_DELAY_SETTING[2];
-  }else{
-    v_DELAY = c_DELAY_SETTING[0];  
+  if (interrupt_time - last_interrupt_time > 50) { // Debounce time of 50 milliseconds
+      if (v_DELAY == c_DELAY_SETTING[0]){
+        v_DELAY = c_DELAY_SETTING[1];
+      }else if(v_DELAY == c_DELAY_SETTING[1]) {
+        v_DELAY = c_DELAY_SETTING[2];
+      }else{
+        v_DELAY = c_DELAY_SETTING[0];  
+      }
   }
-
+  last_interrupt_time = interrupt_time;
 }
