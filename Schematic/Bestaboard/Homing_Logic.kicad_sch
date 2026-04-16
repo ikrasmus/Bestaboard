@@ -3815,7 +3815,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fcd4073b"
 			(at 233.68 38.1 0)
 			(effects
 				(font
@@ -3919,7 +3919,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.ti.com/lit/gpn/sn74hc00"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/sn74hc00.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&ts=1776325175776&ref_url=https%253A%252F%252Fwww.ti.com%252Fgeneral%252Fdocs%252Fsuppproductinfo.tsp%253FdistId%253D10%2526gotoUrl%253Dhttps%253A%252F%252Fwww.ti.com%252Flit%252Fgpn%252Fsn74hc00"
 			(at 173.99 48.26 0)
 			(effects
 				(font
@@ -4091,7 +4091,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/KEM_C1002_X7R_SMD"
 			(at 213.36 149.86 0)
 			(effects
 				(font
@@ -4159,7 +4159,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fcd4073b"
 			(at 172.72 68.58 0)
 			(effects
 				(font
@@ -4263,7 +4263,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fcd4073b"
 			(at 172.72 86.36 0)
 			(effects
 				(font
@@ -4416,7 +4416,7 @@
 				)
 			)
 		)
-		(property "Value" "SN74HC32N"
+		(property "Value" "TC74HC04APF"
 			(at 92.71 162.56 0)
 			(effects
 				(font
@@ -4433,7 +4433,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/889/TC74HC04.pdf"
 			(at 92.71 168.91 0)
 			(effects
 				(font
@@ -4586,7 +4586,7 @@
 				)
 			)
 		)
-		(property "Value" "SN74HC32N"
+		(property "Value" "TC74HC04APF"
 			(at 63.5 162.56 0)
 			(effects
 				(font
@@ -4603,7 +4603,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/889/TC74HC04.pdf"
 			(at 63.5 168.91 0)
 			(effects
 				(font
@@ -4707,7 +4707,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fcd4073b"
 			(at 172.72 149.86 0)
 			(effects
 				(font
@@ -4813,7 +4813,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/KEM_C1002_X7R_SMD"
 			(at 226.06 149.86 0)
 			(effects
 				(font
@@ -4996,7 +4996,7 @@
 				)
 			)
 		)
-		(property "Value" "SN74HC32N"
+		(property "Value" "TC74HC04APF"
 			(at 80.01 107.95 0)
 			(effects
 				(font
@@ -5013,7 +5013,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/889/TC74HC04.pdf"
 			(at 80.01 114.3 0)
 			(effects
 				(font
@@ -5185,7 +5185,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.ti.com/lit/gpn/sn74hc00"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/sn74hc00.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&ts=1776325175776&ref_url=https%253A%252F%252Fwww.ti.com%252Fgeneral%252Fdocs%252Fsuppproductinfo.tsp%253FdistId%253D10%2526gotoUrl%253Dhttps%253A%252F%252Fwww.ti.com%252Flit%252Fgpn%252Fsn74hc00"
 			(at 256.54 38.1 0)
 			(effects
 				(font
@@ -5204,46 +5204,46 @@
 			)
 		)
 		(pin "1"
-			(uuid "0fd18b6d-da6e-420f-b3b3-840ce62d042f")
+			(uuid "0fd18b6d-da6e-420f-b3b3-840ce62d0430")
 		)
 		(pin "2"
-			(uuid "7e5efe74-7d25-498e-afe9-b5210493bb59")
+			(uuid "7e5efe74-7d25-498e-afe9-b5210493bb5a")
 		)
 		(pin "3"
-			(uuid "fe17df5f-8aa4-43ac-a215-df8d55ada5db")
+			(uuid "fe17df5f-8aa4-43ac-a215-df8d55ada5dc")
 		)
 		(pin "4"
-			(uuid "11d040e0-a1fd-4fff-a317-4ec364062ed9")
+			(uuid "11d040e0-a1fd-4fff-a317-4ec364062eda")
 		)
 		(pin "5"
-			(uuid "9346e49e-207d-4d20-8eb3-50c12664900e")
+			(uuid "9346e49e-207d-4d20-8eb3-50c12664900f")
 		)
 		(pin "6"
-			(uuid "714e7891-0887-4a1e-a013-c91896f8d786")
+			(uuid "714e7891-0887-4a1e-a013-c91896f8d787")
 		)
 		(pin "8"
-			(uuid "701c83c5-3741-4513-a1ed-8409a5058164")
+			(uuid "701c83c5-3741-4513-a1ed-8409a5058165")
 		)
 		(pin "11"
-			(uuid "27e28524-73c3-4a50-b25b-20b88fae786f")
+			(uuid "27e28524-73c3-4a50-b25b-20b88fae7870")
 		)
 		(pin "7"
-			(uuid "ff037eba-ce24-45f6-85fa-e9b4a5a26c36")
+			(uuid "ff037eba-ce24-45f6-85fa-e9b4a5a26c37")
 		)
 		(pin "13"
-			(uuid "0f252d97-f376-4acc-9958-6055124ab6e2")
+			(uuid "0f252d97-f376-4acc-9958-6055124ab6e3")
 		)
 		(pin "14"
-			(uuid "cc3c9cf1-de71-4c3f-b7d2-b146e7694c42")
+			(uuid "cc3c9cf1-de71-4c3f-b7d2-b146e7694c43")
 		)
 		(pin "12"
-			(uuid "f6e73f37-6f54-439b-adc9-a34fc050857b")
+			(uuid "f6e73f37-6f54-439b-adc9-a34fc050857c")
 		)
 		(pin "9"
-			(uuid "05884bc2-0ef5-42f9-8398-0ec8103fcfbf")
+			(uuid "05884bc2-0ef5-42f9-8398-0ec8103fcfc0")
 		)
 		(pin "10"
-			(uuid "2f71cc58-ed79-41b4-bb22-c659bda2ca43")
+			(uuid "2f71cc58-ed79-41b4-bb22-c659bda2ca44")
 		)
 		(instances
 			(project ""
@@ -5272,7 +5272,7 @@
 				)
 			)
 		)
-		(property "Value" "SN74HC32N"
+		(property "Value" "TC74HC04APF"
 			(at 63.5 180.34 0)
 			(effects
 				(font
@@ -5289,7 +5289,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/889/TC74HC04.pdf"
 			(at 63.5 186.69 0)
 			(effects
 				(font
@@ -5393,7 +5393,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.ti.com/lit/gpn/sn74hc00"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/sn74hc00.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&ts=1776325175776&ref_url=https%253A%252F%252Fwww.ti.com%252Fgeneral%252Fdocs%252Fsuppproductinfo.tsp%253FdistId%253D10%2526gotoUrl%253Dhttps%253A%252F%252Fwww.ti.com%252Flit%252Fgpn%252Fsn74hc00"
 			(at 173.99 111.76 0)
 			(effects
 				(font
@@ -5412,46 +5412,46 @@
 			)
 		)
 		(pin "1"
-			(uuid "0fd18b6d-da6e-420f-b3b3-840ce62d042f")
+			(uuid "0fd18b6d-da6e-420f-b3b3-840ce62d0431")
 		)
 		(pin "2"
-			(uuid "7e5efe74-7d25-498e-afe9-b5210493bb59")
+			(uuid "7e5efe74-7d25-498e-afe9-b5210493bb5b")
 		)
 		(pin "3"
-			(uuid "fe17df5f-8aa4-43ac-a215-df8d55ada5db")
+			(uuid "fe17df5f-8aa4-43ac-a215-df8d55ada5dd")
 		)
 		(pin "4"
-			(uuid "11d040e0-a1fd-4fff-a317-4ec364062ed9")
+			(uuid "11d040e0-a1fd-4fff-a317-4ec364062edb")
 		)
 		(pin "5"
-			(uuid "9346e49e-207d-4d20-8eb3-50c12664900e")
+			(uuid "9346e49e-207d-4d20-8eb3-50c126649010")
 		)
 		(pin "6"
-			(uuid "714e7891-0887-4a1e-a013-c91896f8d786")
+			(uuid "714e7891-0887-4a1e-a013-c91896f8d788")
 		)
 		(pin "8"
-			(uuid "701c83c5-3741-4513-a1ed-8409a5058164")
+			(uuid "701c83c5-3741-4513-a1ed-8409a5058166")
 		)
 		(pin "11"
 			(uuid "6620e0ca-2a49-4e79-953b-1a974baa202a")
 		)
 		(pin "7"
-			(uuid "ff037eba-ce24-45f6-85fa-e9b4a5a26c36")
+			(uuid "ff037eba-ce24-45f6-85fa-e9b4a5a26c38")
 		)
 		(pin "13"
 			(uuid "be5b0053-2185-4506-85cd-59ceb417520c")
 		)
 		(pin "14"
-			(uuid "cc3c9cf1-de71-4c3f-b7d2-b146e7694c42")
+			(uuid "cc3c9cf1-de71-4c3f-b7d2-b146e7694c44")
 		)
 		(pin "12"
 			(uuid "96b0a981-ae6d-4792-8670-8c9bc2b28378")
 		)
 		(pin "9"
-			(uuid "05884bc2-0ef5-42f9-8398-0ec8103fcfbf")
+			(uuid "05884bc2-0ef5-42f9-8398-0ec8103fcfc1")
 		)
 		(pin "10"
-			(uuid "2f71cc58-ed79-41b4-bb22-c659bda2ca43")
+			(uuid "2f71cc58-ed79-41b4-bb22-c659bda2ca45")
 		)
 		(instances
 			(project "Bestaboard"
@@ -5631,7 +5631,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/KEM_C1002_X7R_SMD"
 			(at 238.76 149.86 0)
 			(effects
 				(font
@@ -5814,7 +5814,7 @@
 				)
 			)
 		)
-		(property "Value" "SN74HC32N"
+		(property "Value" "TC74HC04APF"
 			(at 80.01 44.45 0)
 			(effects
 				(font
@@ -5831,7 +5831,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/889/TC74HC04.pdf"
 			(at 80.01 50.8 0)
 			(effects
 				(font
@@ -5919,7 +5919,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "SN74HC32N"
+		(property "Value" "TC74HC04APF"
 			(at 214.63 39.3699 0)
 			(effects
 				(font
@@ -5937,7 +5937,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/889/TC74HC04.pdf"
 			(at 208.28 38.1 0)
 			(effects
 				(font
@@ -6156,7 +6156,7 @@
 				)
 			)
 		)
-		(property "Value" "SN74HC32N"
+		(property "Value" "TC74HC04APF"
 			(at 92.71 180.34 0)
 			(effects
 				(font
@@ -6173,7 +6173,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/889/TC74HC04.pdf"
 			(at 92.71 186.69 0)
 			(effects
 				(font
@@ -6277,7 +6277,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.ti.com/lit/gpn/sn74hc00"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/sn74hc00.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&ts=1776325175776&ref_url=https%253A%252F%252Fwww.ti.com%252Fgeneral%252Fdocs%252Fsuppproductinfo.tsp%253FdistId%253D10%2526gotoUrl%253Dhttps%253A%252F%252Fwww.ti.com%252Flit%252Fgpn%252Fsn74hc00"
 			(at 124.46 186.69 0)
 			(effects
 				(font
@@ -6296,13 +6296,13 @@
 			)
 		)
 		(pin "1"
-			(uuid "0fd18b6d-da6e-420f-b3b3-840ce62d042f")
+			(uuid "0fd18b6d-da6e-420f-b3b3-840ce62d0432")
 		)
 		(pin "2"
-			(uuid "7e5efe74-7d25-498e-afe9-b5210493bb59")
+			(uuid "7e5efe74-7d25-498e-afe9-b5210493bb5c")
 		)
 		(pin "3"
-			(uuid "fe17df5f-8aa4-43ac-a215-df8d55ada5db")
+			(uuid "fe17df5f-8aa4-43ac-a215-df8d55ada5de")
 		)
 		(pin "4"
 			(uuid "a5edd0fb-c125-4dce-b827-936019fdf57a")
@@ -6314,28 +6314,28 @@
 			(uuid "02daee1e-2ada-4abc-bc51-94e1372364b7")
 		)
 		(pin "8"
-			(uuid "701c83c5-3741-4513-a1ed-8409a5058164")
+			(uuid "701c83c5-3741-4513-a1ed-8409a5058167")
 		)
 		(pin "11"
-			(uuid "27e28524-73c3-4a50-b25b-20b88fae786f")
+			(uuid "27e28524-73c3-4a50-b25b-20b88fae7871")
 		)
 		(pin "7"
-			(uuid "ff037eba-ce24-45f6-85fa-e9b4a5a26c36")
+			(uuid "ff037eba-ce24-45f6-85fa-e9b4a5a26c39")
 		)
 		(pin "13"
-			(uuid "0f252d97-f376-4acc-9958-6055124ab6e2")
+			(uuid "0f252d97-f376-4acc-9958-6055124ab6e4")
 		)
 		(pin "14"
-			(uuid "cc3c9cf1-de71-4c3f-b7d2-b146e7694c42")
+			(uuid "cc3c9cf1-de71-4c3f-b7d2-b146e7694c45")
 		)
 		(pin "12"
-			(uuid "f6e73f37-6f54-439b-adc9-a34fc050857b")
+			(uuid "f6e73f37-6f54-439b-adc9-a34fc050857d")
 		)
 		(pin "9"
-			(uuid "05884bc2-0ef5-42f9-8398-0ec8103fcfbf")
+			(uuid "05884bc2-0ef5-42f9-8398-0ec8103fcfc2")
 		)
 		(pin "10"
-			(uuid "2f71cc58-ed79-41b4-bb22-c659bda2ca43")
+			(uuid "2f71cc58-ed79-41b4-bb22-c659bda2ca46")
 		)
 		(instances
 			(project "Bestaboard"
@@ -6381,7 +6381,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fcd4073b"
 			(at 172.72 132.08 0)
 			(effects
 				(font
@@ -6551,7 +6551,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.ti.com/lit/gpn/sn74hc00"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/sn74hc00.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&ts=1776325175776&ref_url=https%253A%252F%252Fwww.ti.com%252Fgeneral%252Fdocs%252Fsuppproductinfo.tsp%253FdistId%253D10%2526gotoUrl%253Dhttps%253A%252F%252Fwww.ti.com%252Flit%252Fgpn%252Fsn74hc00"
 			(at 124.46 168.91 0)
 			(effects
 				(font
@@ -6570,46 +6570,46 @@
 			)
 		)
 		(pin "1"
-			(uuid "0fd18b6d-da6e-420f-b3b3-840ce62d042f")
+			(uuid "0fd18b6d-da6e-420f-b3b3-840ce62d0433")
 		)
 		(pin "2"
-			(uuid "7e5efe74-7d25-498e-afe9-b5210493bb59")
+			(uuid "7e5efe74-7d25-498e-afe9-b5210493bb5d")
 		)
 		(pin "3"
-			(uuid "fe17df5f-8aa4-43ac-a215-df8d55ada5db")
+			(uuid "fe17df5f-8aa4-43ac-a215-df8d55ada5df")
 		)
 		(pin "4"
-			(uuid "11d040e0-a1fd-4fff-a317-4ec364062ed9")
+			(uuid "11d040e0-a1fd-4fff-a317-4ec364062edc")
 		)
 		(pin "5"
-			(uuid "9346e49e-207d-4d20-8eb3-50c12664900e")
+			(uuid "9346e49e-207d-4d20-8eb3-50c126649011")
 		)
 		(pin "6"
-			(uuid "714e7891-0887-4a1e-a013-c91896f8d786")
+			(uuid "714e7891-0887-4a1e-a013-c91896f8d789")
 		)
 		(pin "8"
-			(uuid "701c83c5-3741-4513-a1ed-8409a5058164")
+			(uuid "701c83c5-3741-4513-a1ed-8409a5058168")
 		)
 		(pin "11"
-			(uuid "27e28524-73c3-4a50-b25b-20b88fae786f")
+			(uuid "27e28524-73c3-4a50-b25b-20b88fae7872")
 		)
 		(pin "7"
-			(uuid "ff037eba-ce24-45f6-85fa-e9b4a5a26c36")
+			(uuid "ff037eba-ce24-45f6-85fa-e9b4a5a26c3a")
 		)
 		(pin "13"
-			(uuid "0f252d97-f376-4acc-9958-6055124ab6e2")
+			(uuid "0f252d97-f376-4acc-9958-6055124ab6e5")
 		)
 		(pin "14"
-			(uuid "cc3c9cf1-de71-4c3f-b7d2-b146e7694c42")
+			(uuid "cc3c9cf1-de71-4c3f-b7d2-b146e7694c46")
 		)
 		(pin "12"
-			(uuid "f6e73f37-6f54-439b-adc9-a34fc050857b")
+			(uuid "f6e73f37-6f54-439b-adc9-a34fc050857e")
 		)
 		(pin "9"
-			(uuid "05884bc2-0ef5-42f9-8398-0ec8103fcfbf")
+			(uuid "05884bc2-0ef5-42f9-8398-0ec8103fcfc3")
 		)
 		(pin "10"
-			(uuid "2f71cc58-ed79-41b4-bb22-c659bda2ca43")
+			(uuid "2f71cc58-ed79-41b4-bb22-c659bda2ca47")
 		)
 		(instances
 			(project ""
