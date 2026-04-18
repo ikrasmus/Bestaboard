@@ -1,3 +1,5 @@
+#include <math.h>;
+
 #define DEBUG 0 // Set to 0 to disable debug output
 
 #if DEBUG
@@ -17,25 +19,27 @@ const int STROBE = 10; //Latch shift register data
 const int HOME = 9; //Home command.
 
 //Define input locations
-const int ALL_HOMED = 8; // All charachters are homed.
+const int ALL_HOMED = 8; //All charachters are homed.
 const int CHANGE_DELAY = 3;
 const int DIAG_1 = 2;
 
 //Constants
-//byte STEPPER_SEQUENCE [8] = {0b0001,0b0011,0b0010,0b0110,0b0100,0b1100,0b1000,0b1001};
+//Stepper Constants
 const byte c_STEPPER_SEQUENCE [8] = {0b1110,0b1100,0b1101,0b1001,0b1011,0b0011,0b0111,0b0110}; //rotates
-//const byte c_SERVO_SEQUENCE [8] = {0b1111,0b1111,0b1111,0b1111,0b0000,0b0000,0b0000,0b0000};
-
 const int c_STEPPER_COUNT = 2;
 const int c_STEPPER_POS_COUNT = 4;
+const byte c_CHARS = 48;
+const char c_FLIPS[c_CHARS] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,!?-+=*$:;";
+
+// Delay timers
 const int c_DELAY_SETTING [3] = {500000, 5000, 500};
-
 const int c_DELAY_STARTUP = 2000; //Start up delay, called once in setup (ms).
-const int c_DELAY_HOLD = 5000; //Hold time inbetween home and charachter modes (ms).
+const int c_DELAY_HOLD = 5000; //Hold time inbetween home and character modes (ms).
 
-//Interrupt volatile variables
+// Interrupt volatile variables
 volatile int v_DELAY = c_DELAY_SETTING[0]; //Define time delay between pulses and servo sequence.
 
+//---------------------SETUP---------------------//
 void setup() {
   // Configure output pins.
   pinMode(DATA, OUTPUT);
@@ -48,44 +52,33 @@ void setup() {
 
   // Configure interrupt pins.
   pinMode(CHANGE_DELAY, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(CHANGE_DELAY), change_delay, FALLING);
+  attachInterrupt(digitalPinToInterrupt(CHANGE_DELAY), change_Delay, FALLING);
 
   // Start up delay.
   delay(c_DELAY_STARTUP);
 
 }
 
+//---------------------LOOP---------------------//
 void loop() {
 
-
 //Initalize STEPPER Outputs (0-15)
-static byte STEPPER_OUT[c_STEPPER_COUNT] = {c_STEPPER_SEQUENCE[0],c_STEPPER_SEQUENCE[0]}; 
-//for (int k = 1; k >= 0; k--){ 
-//  SERVO_OUT[k] = c_SERVO_SEQUENCE[1];
-//}
-
-//Initialze STEPPER Sequence Numbers (1-8)
-static byte STEPPER_SEQ[c_STEPPER_COUNT] = {0, 0};
-//for (int k = 1; k >= 0; k--){ 
-//  SERVO_SEQ[k]=1;
-//}
-
-//Initialze Servo Rotation Counts
-static int STEPPER_ROT[c_STEPPER_COUNT] = {2048, 2048};
-  //SERVO_ROT[1]=8;
-  //SERVO_ROT[0]=4096;
-
-//DIAGNOSTIC
-static int i_all_homed;
-
-//Count
-static int Rotations;
-
-static bool Stop_Rotate;
-static bool Home_Char = 0; //Flip between rotating to home and a charachter. Home = 0, Charachter = 1 
+static byte STEPPER_OUT[c_STEPPER_COUNT] = {c_STEPPER_SEQUENCE[0],c_STEPPER_SEQUENCE[0]}; //Stepper output, 4 bit value for each of the stepper coils.
+static byte STEPPER_SEQ[c_STEPPER_COUNT] = {0, 0}; //Stepper sequence number (0-7).
+static int STEPPER_ROT[c_STEPPER_COUNT] = {0,0}; //Stepper rotations required to get to the desired character. 
 
 
-Rotations = -1;
+static int i_all_homed; // Homed signals are cascaded back towards controller, when all homed signal is received, every stepper is homed. 
+static int Rotations; // Amount of rotations done during character rotation, used to determine when a flip stops rotation.
+static bool Stop_Rotate; // Stops rotating when set to 1.
+static bool Home_Char = 0; //Flip between rotating to home and a character. Home = 0, Character = 1 
+
+// Hardcode in the desired characters.
+STEPPER_ROT[0] = flip_Rotations('A');
+STEPPER_ROT[1] = flip_Rotations('I');
+
+// Initalize variables for next loop.
+Rotations = -1; //Rotations starts at -1 as the first "rotation" is initalizing the steppers. 
 Stop_Rotate = 0;
 
 while(Stop_Rotate == 0){
@@ -122,9 +115,12 @@ while(Stop_Rotate == 0){
     DEBUG_PRINTLN("");              
   }
 
-  // Once data has been updated in the shift registers, strobe to update outputs     
+  // Once data has been updated in the shift registers, strobe to update outputs, only track rotations when going to characters.     
   pin_Pulse(STROBE, v_DELAY, HIGH);
-  Rotations++;
+  if(Home_Char == 1){
+    Rotations++;
+  }
+
   DEBUG_PRINT("Rotations:")
   DEBUG_PRINTLN(Rotations);
 
@@ -136,16 +132,16 @@ while(Stop_Rotate == 0){
 
     if(Home_Char == 1)
     {
-      // When doing charachter rotation, determine on a per charachter basis 
+      // When doing charachter rotation, determine on a per charachter basis when to stop rotation.
       if(Rotations < STEPPER_ROT[k]){
-        STEPPER_SEQ[k] = stepper_Rotate(&STEPPER_OUT[k], STEPPER_SEQ[k], 0);
+        STEPPER_SEQ[k] = stepper_Seq_Rotate(&STEPPER_OUT[k], STEPPER_SEQ[k], 0);
         Stop_Rotate = 0;
       }
     }else{
       // When homing, continue rotating until the all homed signal has been received.
       if(i_all_homed != 1)
       {
-        STEPPER_SEQ[k] = stepper_Rotate(&STEPPER_OUT[k], STEPPER_SEQ[k], 0);
+        STEPPER_SEQ[k] = stepper_Seq_Rotate(&STEPPER_OUT[k], STEPPER_SEQ[k], 0);
         Stop_Rotate = 0;
       }else{
         break;
@@ -160,7 +156,9 @@ while(Stop_Rotate == 0){
   delay(c_DELAY_HOLD);
 }
 
-byte stepper_Rotate(byte* STEPPER, byte SEQ, bool DIR){
+//--------------------stepper_Rotate----------------------//
+// Return the next stepper sequence.
+byte stepper_Seq_Rotate(byte* STEPPER, byte SEQ, bool DIR){
   byte SEQ_NEXT;
 
   if(DIR){
@@ -181,6 +179,21 @@ byte stepper_Rotate(byte* STEPPER, byte SEQ, bool DIR){
 return SEQ_NEXT;
 }
 
+//--------------------rotations_Req----------------------//
+// Calculate the amount of rotations required to reach a provided flip.
+int flip_Rotations(char flip){
+  int flip_Rotations = 0;
+  for (int i = 0; i < c_CHARS; i++){
+    if(flip == c_FLIPS[i]){
+      flip_Rotations = round(85.33 * (i+1));
+      break;
+    }
+  }
+  return flip_Rotations;
+}
+
+//--------------------pin_Pulse----------------------//
+// Pulse a value on a pin for a given delay.
 void pin_Pulse(int pin, int delay, bool high){
 
   if(high == 1){
@@ -199,11 +212,12 @@ void pin_Pulse(int pin, int delay, bool high){
 }
 
 //--------------------Interrupts----------------------//
-void change_delay(){
+//--------------------change_Delay----------------------//
+void change_Delay(){
   static unsigned long last_interrupt_time = 0;
   unsigned long interrupt_time = millis();
 
-  if (interrupt_time - last_interrupt_time > 100) { // Debounce time of 50 milliseconds
+  if (interrupt_time - last_interrupt_time > 100) { // Debounce time.
       if (v_DELAY == c_DELAY_SETTING[0]){
         v_DELAY = c_DELAY_SETTING[1];
       }else if(v_DELAY == c_DELAY_SETTING[1]) {
