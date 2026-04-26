@@ -19,42 +19,50 @@ const int STROBE = 10; //Latch shift register data
 const int HOME = 9; //Home command.
 
 //Define input locations
-const int ALL_HOMED = 8; //All charachters are homed.
+const int ALL_HOMED = 8; //All charac  ters are homed.
 const int CHANGE_DELAY = 3;
 const int DIAG_1 = 2;
 
 //Constants
 //Stepper Constants
-const byte c_STEPPER_SEQUENCE [8] = {0b1110,0b1100,0b1101,0b1001,0b1011,0b0011,0b0111,0b0110}; //rotates
-const int c_STEPPER_COUNT = 2;
-const int c_STEPPER_POS_COUNT = 4;
-const byte c_CHARS = 48;
-const char c_FLIPS[c_CHARS] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,!?-+=*$:;";
+const byte c_STEPPER_SEQUENCE [8] = {0b1110,0b1100,0b1101,0b1001,0b1011,0b0011,0b0111,0b0110}; 
+const int c_STEPPER_COUNT = 2; //Number of stepper motors.
+const int c_STEPPER_POS_COUNT = 4; //Number of stepper sequence positions.
+const byte c_CHARS = 48; //Number of characters on the drum.
+const char c_FLIPS[c_CHARS] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,!?-+=*$:;"; // Flip ordering on the drum.
+const int c_STEP_ANGLES = 4096; // Number of step angles for the stepper, angle * gear ratio, 64 * 64 = 4096
+const int c_STEP_TO_CHAR = c_STEP_ANGLES / c_CHARS; // Amount of steps to take to next charachter, 4096 / 48 = 85.33 (gets rounded down to 85)
 
-// Delay timers
-const int c_DELAY_SETTING [3] = {500000, 5000, 500};
+//Delay timers
+const int c_DELAY_SETTING [3] = {400, 4000, 400000};
 const int c_DELAY_STARTUP = 2000; //Start up delay, called once in setup (ms).
 const int c_DELAY_HOLD = 5000; //Hold time inbetween home and character modes (ms).
 
-// Interrupt volatile variables
+//Interrupt volatile variables
 volatile int v_DELAY = c_DELAY_SETTING[0]; //Define time delay between pulses and servo sequence.
 
 //---------------------SETUP---------------------//
 void setup() {
-  // Configure output pins.
+  //Configure output pins.
   pinMode(DATA, OUTPUT);
   pinMode(SHIFT, OUTPUT);
   pinMode(STROBE, OUTPUT);
   pinMode(HOME, OUTPUT);
 
-  // Configure input pins.
+  //Initalize all pins as low.
+  digitalWrite(DATA, LOW);
+  digitalWrite(SHIFT, LOW);
+  digitalWrite(STROBE, LOW);
+  digitalWrite(HOME, LOW);
+
+  //Configure input pins.
   pinMode(ALL_HOMED, INPUT);
 
-  // Configure interrupt pins.
+  //Configure interrupt pins.
   pinMode(CHANGE_DELAY, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(CHANGE_DELAY), change_Delay, FALLING);
 
-  // Start up delay.
+  //Start up delay.
   delay(c_DELAY_STARTUP);
 
 }
@@ -68,14 +76,14 @@ static byte STEPPER_SEQ[c_STEPPER_COUNT] = {0, 0}; //Stepper sequence number (0-
 static int STEPPER_ROT[c_STEPPER_COUNT] = {0,0}; //Stepper rotations required to get to the desired character. 
 
 
-static int i_all_homed; // Homed signals are cascaded back towards controller, when all homed signal is received, every stepper is homed. 
-static int Rotations; // Amount of rotations done during character rotation, used to determine when a flip stops rotation.
-static bool Stop_Rotate; // Stops rotating when set to 1.
+static int i_all_homed; //Homed signals are cascaded back towards controller, when all homed signal is received, every stepper is homed. 
+static int Rotations; //Amount of rotations done during character rotation, used to determine when a flip stops rotation.
+static bool Stop_Rotate; //Stops rotating when set to 1.
 static bool Home_Char = 0; //Flip between rotating to home and a character. Home = 0, Character = 1 
 
 // Hardcode in the desired characters.
 STEPPER_ROT[0] = flip_Rotations('A');
-STEPPER_ROT[1] = flip_Rotations('I');
+STEPPER_ROT[1] = flip_Rotations('A');
 
 // Initalize variables for next loop.
 Rotations = -1; //Rotations starts at -1 as the first "rotation" is initalizing the steppers. 
@@ -88,13 +96,22 @@ while(Stop_Rotate == 0){
   DEBUG_PRINT("All Homed?:")
   DEBUG_PRINTLN(i_all_homed);
 
-  //If homing, send out the home command.
+  //If homing, send out the home command after rotating one character.
   if(Home_Char == 0){
-    digitalWrite(HOME, 1);
     DEBUG_PRINTLN("HOMING");
+    // Before sending the homing signal request a single characters worth of rotation
+    // This is to address the problem of the first character still triggering the homing sensor.
+    for (int k = c_STEPPER_COUNT - 1; k >= 0; k--){
+      STEPPER_ROT[k] = flip_Rotations(c_FLIPS[0]);
+    }
+
+    if (Rotations > c_STEP_TO_CHAR){
+      digitalWrite(HOME, 1);
+    }
   }else{
-    digitalWrite(HOME, 0);
     DEBUG_PRINTLN("CHARACHTER");
+    digitalWrite(HOME, 0);
+    
   }
 
   // Update data in shift register.
@@ -115,11 +132,9 @@ while(Stop_Rotate == 0){
     DEBUG_PRINTLN("");              
   }
 
-  // Once data has been updated in the shift registers, strobe to update outputs, only track rotations when going to characters.     
+  // Once data has been updated in the shift registers, strobe to update outputs.     
   pin_Pulse(STROBE, v_DELAY, HIGH);
-  if(Home_Char == 1){
-    Rotations++;
-  }
+  Rotations++;
 
   DEBUG_PRINT("Rotations:")
   DEBUG_PRINTLN(Rotations);
@@ -127,7 +142,7 @@ while(Stop_Rotate == 0){
   // Default to stop rotation, override if continued rotation is necessary.
   Stop_Rotate = 1;
 
-  // If more rotations are needed, update stepper outputs for next rotation
+  // If more rotations are needed, update stepper sequence for next rotation
   for (int k = c_STEPPER_COUNT - 1; k >= 0; k--){
 
     if(Home_Char == 1)
@@ -137,13 +152,13 @@ while(Stop_Rotate == 0){
         STEPPER_SEQ[k] = stepper_Seq_Rotate(&STEPPER_OUT[k], STEPPER_SEQ[k], 0);
         Stop_Rotate = 0;
       }
-    }else{
-      // When homing, continue rotating until the all homed signal has been received.
-      if(i_all_homed != 1)
-      {
+    } else {
+      // When homing, guarantee one character's worth of rotation to get past the homing sensor,
+      // otherwise continue rotating until the all homed signal has been received.
+      if(Rotations < STEPPER_ROT[k] || i_all_homed != 1){
         STEPPER_SEQ[k] = stepper_Seq_Rotate(&STEPPER_OUT[k], STEPPER_SEQ[k], 0);
         Stop_Rotate = 0;
-      }else{
+      } else {
         break;
       }
     }
@@ -185,7 +200,7 @@ int flip_Rotations(char flip){
   int flip_Rotations = 0;
   for (int i = 0; i < c_CHARS; i++){
     if(flip == c_FLIPS[i]){
-      flip_Rotations = round(85.33 * (i+1));
+      flip_Rotations = (c_STEP_TO_CHAR * (i+1)) + round(i/3); // Handle whole and decimal parts individually. 
       break;
     }
   }
