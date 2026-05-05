@@ -20,17 +20,20 @@
 
 //Define input locations
 #define i_ALL_HOMED 8 //All characters are homed.
-const int CHANGE_DELAY = 3;
+#define i_FLIP_OFFSET_4 7 //Flip offset switch #4.
+#define i_FLIP_OFFSET_3 6 //Flip offset switch #3.
+#define i_FLIP_OFFSET_2 5 //Flip offset switch #2.
+#define i_FLIP_OFFSET_1 4 //Flip offset switch #1.
+#define i_CHANGE_DELAY 3
 const int DIAG_1 = 2;
 
 //Constants
 //Stepper Constants
-const byte c_STEPPER_SEQUENCE [8] = {0b1110,0b1100,0b1101,0b1001,0b1011,0b0011,0b0111,0b0110}; 
+const byte c_STEPPER_SEQUENCE [8] = {0b1110,0b1100,0b1101,0b1001,0b1011,0b0011,0b0111,0b0110};
 const int c_STEPPER_COUNT = 4; //Number of stepper motors.
 const int c_STEPPER_POS_COUNT = 4; //Number of stepper sequence positions.
 const byte c_CHARS = 48; //Number of characters on the drum.
 const char c_FLIPS[c_CHARS] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,!?-+=*$:;"; //Flip ordering on the drum.
-const int c_FLIP_CENTER = 0; //Adjustment to center on the selected character.
 const int c_STEP_ANGLES = 4096; // Number of step angles for the stepper, angle * gear ratio, 64 * 64 = 4096
 const int c_STEP_TO_CHAR = c_STEP_ANGLES / c_CHARS; // Amount of steps to take to next charachter, 4096 / 48 = 85.33 (gets rounded down to 85)
 const char c_WORDS[2][c_STEPPER_COUNT+1] = {
@@ -39,7 +42,7 @@ const char c_WORDS[2][c_STEPPER_COUNT+1] = {
 };
 
 //Delay timers
-const int c_DELAY_SETTING [3] = {250, 2000, 200000};
+const int c_DELAY_SETTING [3] = {100, 150, 200};
 const int c_DELAY_STARTUP = 2000; //Start up delay, called once in setup (ms).
 const int c_DELAY_HOLD = 5000; //Hold time inbetween home and character modes (ms).
 
@@ -62,11 +65,15 @@ void setup() {
 
   //Configure input pins.
   pinMode(i_ALL_HOMED, INPUT);
+  pinMode(i_FLIP_OFFSET_4, INPUT_PULLUP);
+  pinMode(i_FLIP_OFFSET_3, INPUT_PULLUP);
+  pinMode(i_FLIP_OFFSET_2, INPUT_PULLUP);
+  pinMode(i_FLIP_OFFSET_1, INPUT_PULLUP);
 
   //Configure interrupt pins.
-  pinMode(CHANGE_DELAY, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(CHANGE_DELAY), change_Delay, FALLING);
-
+  pinMode(i_CHANGE_DELAY, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(i_CHANGE_DELAY), change_Delay, FALLING);
+  
   //Start up delay.
   delay(c_DELAY_STARTUP);
 
@@ -80,7 +87,16 @@ static byte STEPPER_OUT[c_STEPPER_COUNT] = {c_STEPPER_SEQUENCE[0],c_STEPPER_SEQU
 static byte STEPPER_SEQ[c_STEPPER_COUNT] = {0, 0, 0, 0}; //Stepper sequence number (0-7).
 static int STEPPER_ROT[c_STEPPER_COUNT] = {0, 0, 0, 0}; //Stepper rotations required to get to the desired character. 
 
-static int i_all_homed; //Homed signals are cascaded back towards controller, when all homed signal is received, every stepper is homed. 
+//Input variables
+static int i_all_homed; //Homed signals are cascaded back towards controller, when all homed signal is received, every stepper is homed.
+static int i_flip_offset_4; //Flip offset switch #4, interally pulled high, when low add weighted offset to flip rotations.
+static int i_flip_offset_3; //Flip offset switch #3, interally pulled high, when low add weighted offset to flip rotations.
+static int i_flip_offset_2; //Flip offset switch #2, interally pulled high, when low add weighted offset to flip rotations.
+static int i_flip_offset_1; //Flip offset switch #1, interally pulled high, when low add weighted offset to flip rotations.
+const int flip_offset_weights[4] = {5,10,20,40}; //weights applied to flip offset switches.
+
+//Variables
+static int flip_offset = 0; //Adjustment to center on the selected character.
 static int Rotations; //Amount of rotations done during character rotation, used to determine when a flip stops rotation.
 static bool Stop_Rotate; //Stops rotating when set to 1.
 static bool Home_Char = 0; //Flip between rotating to home and a character. Home = 0, Character = 1 
@@ -93,11 +109,19 @@ Stop_Rotate = 0;
 
 while(Stop_Rotate == 0){
   
-  // Read the state of the pushbuttons:
+  //Read Inputs
+  i_flip_offset_4 = digitalRead(i_FLIP_OFFSET_4);
+  i_flip_offset_3 = digitalRead(i_FLIP_OFFSET_3);
+  i_flip_offset_2 = digitalRead(i_FLIP_OFFSET_2);
+  i_flip_offset_1 = digitalRead(i_FLIP_OFFSET_1);
   i_all_homed = digitalRead(i_ALL_HOMED);
-  //i_all_homed = 1;
+
   DEBUG_PRINT("All Homed?:")
   DEBUG_PRINTLN(i_all_homed);
+
+  //Calculate flip offset applied to every character.
+  flip_offset = -1 * (!i_flip_offset_4*flip_offset_weights[3] + !i_flip_offset_3*flip_offset_weights[2] 
+                    + !i_flip_offset_2*flip_offset_weights[1] + !i_flip_offset_1*flip_offset_weights[0]);
 
   //If homing, send out the home command after rotating one character.
   if(Home_Char == 0){
@@ -107,7 +131,7 @@ while(Stop_Rotate == 0){
     //For the first pass of the loop don't, this allows the machine to power up at home, without moving off it.
     if(word_loop > 0){
       for (int k = c_STEPPER_COUNT - 1; k >= 0; k--){
-        STEPPER_ROT[k] = flip_Rotations(c_FLIPS[0]);
+        STEPPER_ROT[k] = flip_Rotations(c_FLIPS[0], 0);
       }
 
       if (Rotations > c_STEP_TO_CHAR){
@@ -123,7 +147,7 @@ while(Stop_Rotate == 0){
 
     //Fill in STEPPER_ROT with the amount of flips required for each character to make the desired word.
     for (int k = c_STEPPER_COUNT - 1; k >= 0; k--){
-      STEPPER_ROT[k] = flip_Rotations(c_WORDS[j_word][k]);
+      STEPPER_ROT[k] = flip_Rotations(c_WORDS[j_word][k], flip_offset);
     }
 
     digitalWrite(o_HOME, 0);
@@ -133,10 +157,6 @@ while(Stop_Rotate == 0){
   // Update data in shift register.
   // Loop for each stepper.
   for (int i = c_STEPPER_COUNT - 1; i >= 0; i--) {
-
-    //DEBUG_PRINT("Data Stepper Loop:")
-    //DEBUG_PRINTLN(i);
-    //DEBUG_PRINT("Data:");
 
     // Loop for each data point and send down the shift register, 4 data points per stepper.
     for(int j = c_STEPPER_POS_COUNT - 1; j >= 0; j--){
@@ -218,11 +238,11 @@ return SEQ_NEXT;
 
 //--------------------flip_Rotations----------------------//
 // Calculate the amount of rotations required to reach a provided flip character.
-int flip_Rotations(char flip){
+int flip_Rotations(char flip, int offset){
   int flip_Rotations = 0;
   for (int i = 0; i < c_CHARS; i++){
     if(flip == c_FLIPS[i]){
-      flip_Rotations = (c_STEP_TO_CHAR * (i+1)) + round((i+1)/3) + c_FLIP_CENTER; // Handle whole and decimal parts individually. 
+      flip_Rotations = (c_STEP_TO_CHAR * (i+1)) + round((i+1)/3) + offset; // Handle whole and decimal parts individually, allow for an offset. 
       break;
     }
   }
@@ -254,7 +274,7 @@ void change_Delay(){
   static unsigned long last_interrupt_time = 0;
   unsigned long interrupt_time = millis();
 
-  if (interrupt_time - last_interrupt_time > 100) { // Debounce time.
+  if (interrupt_time - last_interrupt_time > 50) { // Debounce time.
       if (v_DELAY == c_DELAY_SETTING[0]){
         v_DELAY = c_DELAY_SETTING[1];
       }else if(v_DELAY == c_DELAY_SETTING[1]) {
