@@ -2738,7 +2738,7 @@
 	)
 	(text "Decoupling for ICs, place next to devices"
 		(exclude_from_sim no)
-		(at 238.252 140.97 0)
+		(at 49.022 168.91 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2753,25 +2753,25 @@
 		(uuid "03080354-0929-4b0a-b945-3963edcc4f7a")
 	)
 	(junction
-		(at 114.3 184.15)
+		(at 147.32 184.15)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "0652b8d1-3a51-427e-8d61-8b9c728e448b")
 	)
 	(junction
-		(at 213.36 156.21)
+		(at 24.13 184.15)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "0f07757c-5ffe-420e-9aaa-9977c283aa2f")
 	)
 	(junction
-		(at 213.36 143.51)
+		(at 24.13 171.45)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "58da2ddb-d4a1-48bc-a0d0-900208e55ed3")
 	)
 	(junction
-		(at 114.3 166.37)
+		(at 147.32 166.37)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "617abdfa-b08e-46d1-bffa-29aef9188609")
@@ -2789,7 +2789,7 @@
 		(uuid "90b92d59-8ede-4a42-a5ce-e7c146815a70")
 	)
 	(junction
-		(at 226.06 143.51)
+		(at 36.83 171.45)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "aec69fc0-0e4e-4897-9673-6a4da2fac2ea")
@@ -2801,38 +2801,38 @@
 		(uuid "cb9e9ae3-c588-4315-b0e6-0472f9e6f568")
 	)
 	(junction
-		(at 226.06 156.21)
+		(at 36.83 184.15)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f6dfff2d-0eb6-4c33-b9bf-7c887a9b2990")
 	)
 	(no_connect
-		(at 104.14 186.69)
+		(at 137.16 186.69)
 		(uuid "0b926bde-3fb9-4d78-84f9-478d62c50624")
 	)
 	(no_connect
-		(at 74.93 168.91)
+		(at 107.95 168.91)
 		(uuid "114a2cdd-c9a8-40a0-be32-27959c84e574")
 	)
 	(no_connect
-		(at 104.14 168.91)
+		(at 137.16 168.91)
 		(uuid "1c7d8b9b-43a6-4ea9-9e30-4eecf6c434fc")
 	)
 	(no_connect
-		(at 74.93 186.69)
+		(at 107.95 186.69)
 		(uuid "5c1ca1e0-bcbe-4182-8183-324643ebad3f")
 	)
 	(no_connect
-		(at 135.89 168.91)
+		(at 168.91 168.91)
 		(uuid "a446372b-07d1-470c-87b1-df5b78accca3")
 	)
 	(no_connect
-		(at 135.89 186.69)
+		(at 168.91 186.69)
 		(uuid "f09422bd-99ec-4e86-b9a7-e1476eb97f23")
 	)
 	(wire
 		(pts
-			(xy 52.07 186.69) (xy 55.88 186.69)
+			(xy 85.09 186.69) (xy 88.9 186.69)
 		)
 		(stroke
 			(width 0)
@@ -2842,7 +2842,7 @@
 	)
 	(wire
 		(pts
-			(xy 81.28 168.91) (xy 85.09 168.91)
+			(xy 114.3 168.91) (xy 118.11 168.91)
 		)
 		(stroke
 			(width 0)
@@ -2902,7 +2902,7 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 186.69) (xy 74.93 186.69)
+			(xy 104.14 186.69) (xy 107.95 186.69)
 		)
 		(stroke
 			(width 0)
@@ -2912,7 +2912,7 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 171.45) (xy 114.3 171.45)
+			(xy 149.86 171.45) (xy 147.32 171.45)
 		)
 		(stroke
 			(width 0)
@@ -2952,7 +2952,7 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 168.91) (xy 104.14 168.91)
+			(xy 133.35 168.91) (xy 137.16 168.91)
 		)
 		(stroke
 			(width 0)
@@ -2992,7 +2992,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 184.15) (xy 116.84 184.15)
+			(xy 147.32 184.15) (xy 149.86 184.15)
 		)
 		(stroke
 			(width 0)
@@ -3002,7 +3002,7 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 143.51) (xy 213.36 146.05)
+			(xy 24.13 171.45) (xy 24.13 173.99)
 		)
 		(stroke
 			(width 0)
@@ -3012,7 +3012,7 @@
 	)
 	(wire
 		(pts
-			(xy 226.06 156.21) (xy 213.36 156.21)
+			(xy 36.83 184.15) (xy 24.13 184.15)
 		)
 		(stroke
 			(width 0)
@@ -3032,7 +3032,7 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 153.67) (xy 213.36 156.21)
+			(xy 24.13 181.61) (xy 24.13 184.15)
 		)
 		(stroke
 			(width 0)
@@ -3062,7 +3062,7 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 156.21) (xy 226.06 156.21)
+			(xy 49.53 184.15) (xy 36.83 184.15)
 		)
 		(stroke
 			(width 0)
@@ -3082,7 +3082,7 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 168.91) (xy 74.93 168.91)
+			(xy 104.14 168.91) (xy 107.95 168.91)
 		)
 		(stroke
 			(width 0)
@@ -3092,7 +3092,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 166.37) (xy 114.3 171.45)
+			(xy 147.32 166.37) (xy 147.32 171.45)
 		)
 		(stroke
 			(width 0)
@@ -3202,7 +3202,7 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 168.91) (xy 55.88 168.91)
+			(xy 85.09 168.91) (xy 88.9 168.91)
 		)
 		(stroke
 			(width 0)
@@ -3222,7 +3222,7 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 143.51) (xy 238.76 146.05)
+			(xy 49.53 171.45) (xy 49.53 173.99)
 		)
 		(stroke
 			(width 0)
@@ -3252,7 +3252,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 181.61) (xy 114.3 184.15)
+			(xy 147.32 181.61) (xy 147.32 184.15)
 		)
 		(stroke
 			(width 0)
@@ -3272,7 +3272,7 @@
 	)
 	(wire
 		(pts
-			(xy 226.06 143.51) (xy 226.06 146.05)
+			(xy 36.83 171.45) (xy 36.83 173.99)
 		)
 		(stroke
 			(width 0)
@@ -3282,7 +3282,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 168.91) (xy 135.89 168.91)
+			(xy 165.1 168.91) (xy 168.91 168.91)
 		)
 		(stroke
 			(width 0)
@@ -3292,7 +3292,7 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 158.75) (xy 213.36 156.21)
+			(xy 24.13 186.69) (xy 24.13 184.15)
 		)
 		(stroke
 			(width 0)
@@ -3332,7 +3332,7 @@
 	)
 	(wire
 		(pts
-			(xy 226.06 153.67) (xy 226.06 156.21)
+			(xy 36.83 181.61) (xy 36.83 184.15)
 		)
 		(stroke
 			(width 0)
@@ -3342,7 +3342,7 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 186.69) (xy 104.14 186.69)
+			(xy 133.35 186.69) (xy 137.16 186.69)
 		)
 		(stroke
 			(width 0)
@@ -3352,7 +3352,7 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 166.37) (xy 52.07 168.91)
+			(xy 85.09 166.37) (xy 85.09 168.91)
 		)
 		(stroke
 			(width 0)
@@ -3362,7 +3362,7 @@
 	)
 	(wire
 		(pts
-			(xy 81.28 184.15) (xy 81.28 186.69)
+			(xy 114.3 184.15) (xy 114.3 186.69)
 		)
 		(stroke
 			(width 0)
@@ -3372,7 +3372,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 186.69) (xy 135.89 186.69)
+			(xy 165.1 186.69) (xy 168.91 186.69)
 		)
 		(stroke
 			(width 0)
@@ -3382,7 +3382,7 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 143.51) (xy 226.06 143.51)
+			(xy 24.13 171.45) (xy 36.83 171.45)
 		)
 		(stroke
 			(width 0)
@@ -3422,7 +3422,7 @@
 	)
 	(wire
 		(pts
-			(xy 81.28 166.37) (xy 81.28 168.91)
+			(xy 114.3 166.37) (xy 114.3 168.91)
 		)
 		(stroke
 			(width 0)
@@ -3432,7 +3432,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 166.37) (xy 116.84 166.37)
+			(xy 147.32 166.37) (xy 149.86 166.37)
 		)
 		(stroke
 			(width 0)
@@ -3442,7 +3442,7 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 189.23) (xy 114.3 189.23)
+			(xy 149.86 189.23) (xy 147.32 189.23)
 		)
 		(stroke
 			(width 0)
@@ -3492,7 +3492,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 184.15) (xy 114.3 189.23)
+			(xy 147.32 184.15) (xy 147.32 189.23)
 		)
 		(stroke
 			(width 0)
@@ -3502,7 +3502,7 @@
 	)
 	(wire
 		(pts
-			(xy 81.28 186.69) (xy 85.09 186.69)
+			(xy 114.3 186.69) (xy 118.11 186.69)
 		)
 		(stroke
 			(width 0)
@@ -3512,7 +3512,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 163.83) (xy 114.3 166.37)
+			(xy 147.32 163.83) (xy 147.32 166.37)
 		)
 		(stroke
 			(width 0)
@@ -3542,7 +3542,7 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 153.67) (xy 238.76 156.21)
+			(xy 49.53 181.61) (xy 49.53 184.15)
 		)
 		(stroke
 			(width 0)
@@ -3552,7 +3552,7 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 184.15) (xy 52.07 186.69)
+			(xy 85.09 184.15) (xy 85.09 186.69)
 		)
 		(stroke
 			(width 0)
@@ -3562,7 +3562,7 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 139.7) (xy 213.36 143.51)
+			(xy 24.13 167.64) (xy 24.13 171.45)
 		)
 		(stroke
 			(width 0)
@@ -3572,7 +3572,7 @@
 	)
 	(wire
 		(pts
-			(xy 226.06 143.51) (xy 238.76 143.51)
+			(xy 36.83 171.45) (xy 49.53 171.45)
 		)
 		(stroke
 			(width 0)
@@ -3833,6 +3833,15 @@
 				(hide yes)
 			)
 		)
+		(property "Purchase Link" "https://www.digikey.com/en/products/detail/texas-instruments/CD4081BE/67323"
+			(at 233.68 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "14"
 			(uuid "4848641f-9ba5-4ae9-aa50-39855fbf52b2")
 		)
@@ -3937,6 +3946,15 @@
 				(hide yes)
 			)
 		)
+		(property "Purchase Link" "https://www.digikey.com/en/products/detail/texas-instruments/SN74HC00N/277209"
+			(at 173.99 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "0fd18b6d-da6e-420f-b3b3-840ce62d042f")
 		)
@@ -3990,7 +4008,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 213.36 158.75 0)
+		(at 24.13 186.69 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3999,7 +4017,7 @@
 		(fields_autoplaced yes)
 		(uuid "0ea80b94-1f63-4da6-bad5-796d27794f95")
 		(property "Reference" "#PWR026"
-			(at 213.36 165.1 0)
+			(at 24.13 193.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4008,7 +4026,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 213.36 163.83 0)
+			(at 24.13 191.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4016,7 +4034,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 213.36 158.75 0)
+			(at 24.13 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4025,7 +4043,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 213.36 158.75 0)
+			(at 24.13 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4034,7 +4052,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 213.36 158.75 0)
+			(at 24.13 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4056,7 +4074,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_US")
-		(at 213.36 149.86 0)
+		(at 24.13 177.8 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4065,7 +4083,7 @@
 		(fields_autoplaced yes)
 		(uuid "1aab91bd-f20c-4668-83de-e9a464718388")
 		(property "Reference" "C6"
-			(at 217.17 148.8439 0)
+			(at 27.94 176.7839 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4074,7 +4092,7 @@
 			)
 		)
 		(property "Value" "0.1uF"
-			(at 217.17 151.3839 0)
+			(at 27.94 179.3239 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4083,7 +4101,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
-			(at 213.36 149.86 0)
+			(at 24.13 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4092,7 +4110,7 @@
 			)
 		)
 		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/KEM_C1002_X7R_SMD"
-			(at 213.36 149.86 0)
+			(at 24.13 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4101,7 +4119,16 @@
 			)
 		)
 		(property "Description" "capacitor, US symbol"
-			(at 213.36 149.86 0)
+			(at 24.13 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase Link" "https://www.digikey.com/en/products/detail/kemet/C0603C104K5RACTU/1465594"
+			(at 24.13 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4169,6 +4196,15 @@
 			)
 		)
 		(property "Description" "Quad And 2 inputs"
+			(at 172.72 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase Link" "https://www.digikey.com/en/products/detail/texas-instruments/CD4081BE/67323"
 			(at 172.72 68.58 0)
 			(effects
 				(font
@@ -4273,6 +4309,15 @@
 			)
 		)
 		(property "Description" "Quad And 2 inputs"
+			(at 172.72 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase Link" "https://www.digikey.com/en/products/detail/texas-instruments/CD4081BE/67323"
 			(at 172.72 86.36 0)
 			(effects
 				(font
@@ -4400,7 +4445,7 @@
 	)
 	(symbol
 		(lib_id "74xx:74HC04")
-		(at 92.71 168.91 0)
+		(at 125.73 168.91 0)
 		(unit 5)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4409,7 +4454,7 @@
 		(fields_autoplaced yes)
 		(uuid "32e3c1c1-69db-404d-a86c-995fbb5869d2")
 		(property "Reference" "U10"
-			(at 92.71 160.02 0)
+			(at 125.73 160.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4417,7 +4462,7 @@
 			)
 		)
 		(property "Value" "TC74HC04APF"
-			(at 92.71 162.56 0)
+			(at 125.73 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4425,7 +4470,7 @@
 			)
 		)
 		(property "Footprint" "Package_DIP:DIP-14_W7.62mm_LongPads"
-			(at 92.71 168.91 0)
+			(at 125.73 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4434,7 +4479,7 @@
 			)
 		)
 		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/889/TC74HC04.pdf"
-			(at 92.71 168.91 0)
+			(at 125.73 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4443,7 +4488,16 @@
 			)
 		)
 		(property "Description" "Hex Inverter"
-			(at 92.71 168.91 0)
+			(at 125.73 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase Link" "https://www.digikey.com/en/products/detail/toshiba-semiconductor-and-storage/TC74HC04APF/870457"
+			(at 125.73 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4504,7 +4558,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 52.07 166.37 0)
+		(at 85.09 166.37 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4513,7 +4567,7 @@
 		(fields_autoplaced yes)
 		(uuid "42ad8cbe-fbc7-4759-b914-505239194efb")
 		(property "Reference" "#PWR021"
-			(at 52.07 170.18 0)
+			(at 85.09 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4522,7 +4576,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 52.07 161.29 0)
+			(at 85.09 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4530,7 +4584,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 52.07 166.37 0)
+			(at 85.09 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4539,7 +4593,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 52.07 166.37 0)
+			(at 85.09 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4548,7 +4602,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 52.07 166.37 0)
+			(at 85.09 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4570,7 +4624,7 @@
 	)
 	(symbol
 		(lib_id "74xx:74HC04")
-		(at 63.5 168.91 0)
+		(at 96.52 168.91 0)
 		(unit 6)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4579,7 +4633,7 @@
 		(fields_autoplaced yes)
 		(uuid "4aa6b665-4eee-4543-b382-255208e3840f")
 		(property "Reference" "U10"
-			(at 63.5 160.02 0)
+			(at 96.52 160.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4587,7 +4641,7 @@
 			)
 		)
 		(property "Value" "TC74HC04APF"
-			(at 63.5 162.56 0)
+			(at 96.52 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4595,7 +4649,7 @@
 			)
 		)
 		(property "Footprint" "Package_DIP:DIP-14_W7.62mm_LongPads"
-			(at 63.5 168.91 0)
+			(at 96.52 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4604,7 +4658,7 @@
 			)
 		)
 		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/889/TC74HC04.pdf"
-			(at 63.5 168.91 0)
+			(at 96.52 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4613,7 +4667,16 @@
 			)
 		)
 		(property "Description" "Hex Inverter"
-			(at 63.5 168.91 0)
+			(at 96.52 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase Link" "https://www.digikey.com/en/products/detail/toshiba-semiconductor-and-storage/TC74HC04APF/870457"
+			(at 96.52 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4725,6 +4788,15 @@
 				(hide yes)
 			)
 		)
+		(property "Purchase Link" "https://www.digikey.com/en/products/detail/texas-instruments/CD4081BE/67323"
+			(at 172.72 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "14"
 			(uuid "4848641f-9ba5-4ae9-aa50-39855fbf52b5")
 		)
@@ -4778,7 +4850,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_US")
-		(at 226.06 149.86 0)
+		(at 36.83 177.8 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4787,7 +4859,7 @@
 		(fields_autoplaced yes)
 		(uuid "553e6e7e-b5ab-4929-9bdf-0c6004d28542")
 		(property "Reference" "C7"
-			(at 229.87 148.8439 0)
+			(at 40.64 176.7839 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4796,7 +4868,7 @@
 			)
 		)
 		(property "Value" "0.1uF"
-			(at 229.87 151.3839 0)
+			(at 40.64 179.3239 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4805,7 +4877,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
-			(at 226.06 149.86 0)
+			(at 36.83 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4814,7 +4886,7 @@
 			)
 		)
 		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/KEM_C1002_X7R_SMD"
-			(at 226.06 149.86 0)
+			(at 36.83 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4823,7 +4895,16 @@
 			)
 		)
 		(property "Description" "capacitor, US symbol"
-			(at 226.06 149.86 0)
+			(at 36.83 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase Link" "https://www.digikey.com/en/products/detail/kemet/C0603C104K5RACTU/1465594"
+			(at 36.83 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5031,6 +5112,15 @@
 				(hide yes)
 			)
 		)
+		(property "Purchase Link" "https://www.digikey.com/en/products/detail/toshiba-semiconductor-and-storage/TC74HC04APF/870457"
+			(at 80.01 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "12"
 			(uuid "e7c51803-8d2a-49c4-9947-10d8dc3b25bd")
 		)
@@ -5203,6 +5293,15 @@
 				(hide yes)
 			)
 		)
+		(property "Purchase Link" "https://www.digikey.com/en/products/detail/texas-instruments/SN74HC00N/277209"
+			(at 256.54 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "0fd18b6d-da6e-420f-b3b3-840ce62d0430")
 		)
@@ -5256,7 +5355,7 @@
 	)
 	(symbol
 		(lib_id "74xx:74HC04")
-		(at 63.5 186.69 0)
+		(at 96.52 186.69 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5265,7 +5364,7 @@
 		(fields_autoplaced yes)
 		(uuid "84a77e59-ff35-418e-8557-5de0c0f7c086")
 		(property "Reference" "U10"
-			(at 63.5 177.8 0)
+			(at 96.52 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5273,7 +5372,7 @@
 			)
 		)
 		(property "Value" "TC74HC04APF"
-			(at 63.5 180.34 0)
+			(at 96.52 180.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5281,7 +5380,7 @@
 			)
 		)
 		(property "Footprint" "Package_DIP:DIP-14_W7.62mm_LongPads"
-			(at 63.5 186.69 0)
+			(at 96.52 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5290,7 +5389,7 @@
 			)
 		)
 		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/889/TC74HC04.pdf"
-			(at 63.5 186.69 0)
+			(at 96.52 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5299,7 +5398,16 @@
 			)
 		)
 		(property "Description" "Hex Inverter"
-			(at 63.5 186.69 0)
+			(at 96.52 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase Link" "https://www.digikey.com/en/products/detail/toshiba-semiconductor-and-storage/TC74HC04APF/870457"
+			(at 96.52 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5411,6 +5519,15 @@
 				(hide yes)
 			)
 		)
+		(property "Purchase Link" "https://www.digikey.com/en/products/detail/texas-instruments/SN74HC00N/277209"
+			(at 173.99 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "0fd18b6d-da6e-420f-b3b3-840ce62d0431")
 		)
@@ -5464,7 +5581,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 213.36 139.7 0)
+		(at 24.13 167.64 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5473,7 +5590,7 @@
 		(fields_autoplaced yes)
 		(uuid "8f62c898-1206-4fad-8daa-ef3af0d164a7")
 		(property "Reference" "#PWR025"
-			(at 213.36 143.51 0)
+			(at 24.13 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5482,7 +5599,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 213.36 134.62 0)
+			(at 24.13 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5490,7 +5607,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 213.36 139.7 0)
+			(at 24.13 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5499,7 +5616,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 213.36 139.7 0)
+			(at 24.13 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5508,7 +5625,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 213.36 139.7 0)
+			(at 24.13 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5596,7 +5713,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_US")
-		(at 238.76 149.86 0)
+		(at 49.53 177.8 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5605,7 +5722,7 @@
 		(fields_autoplaced yes)
 		(uuid "9f751139-0a37-4568-a0de-77169a163450")
 		(property "Reference" "C8"
-			(at 242.57 148.8439 0)
+			(at 53.34 176.7839 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5614,7 +5731,7 @@
 			)
 		)
 		(property "Value" "0.1uF"
-			(at 242.57 151.3839 0)
+			(at 53.34 179.3239 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5623,7 +5740,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
-			(at 238.76 149.86 0)
+			(at 49.53 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5632,7 +5749,7 @@
 			)
 		)
 		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/KEM_C1002_X7R_SMD"
-			(at 238.76 149.86 0)
+			(at 49.53 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5641,7 +5758,16 @@
 			)
 		)
 		(property "Description" "capacitor, US symbol"
-			(at 238.76 149.86 0)
+			(at 49.53 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase Link" "https://www.digikey.com/en/products/detail/kemet/C0603C104K5RACTU/1465594"
+			(at 49.53 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5666,7 +5792,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 81.28 166.37 0)
+		(at 114.3 166.37 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5675,7 +5801,7 @@
 		(fields_autoplaced yes)
 		(uuid "a72dcee5-dd5a-496d-b793-b1089a5caf75")
 		(property "Reference" "#PWR024"
-			(at 81.28 170.18 0)
+			(at 114.3 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5684,7 +5810,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 81.28 161.29 0)
+			(at 114.3 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5692,7 +5818,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 81.28 166.37 0)
+			(at 114.3 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5701,7 +5827,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 81.28 166.37 0)
+			(at 114.3 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5710,7 +5836,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 81.28 166.37 0)
+			(at 114.3 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5732,7 +5858,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 114.3 181.61 0)
+		(at 147.32 181.61 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5741,7 +5867,7 @@
 		(fields_autoplaced yes)
 		(uuid "b847ed9f-6b95-4603-9e49-3d9cb50bdd97")
 		(property "Reference" "#PWR030"
-			(at 114.3 185.42 0)
+			(at 147.32 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5750,7 +5876,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 114.3 176.53 0)
+			(at 147.32 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5758,7 +5884,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 114.3 181.61 0)
+			(at 147.32 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5767,7 +5893,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 114.3 181.61 0)
+			(at 147.32 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5776,7 +5902,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 114.3 181.61 0)
+			(at 147.32 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5841,6 +5967,15 @@
 			)
 		)
 		(property "Description" "Hex Inverter"
+			(at 80.01 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase Link" "https://www.digikey.com/en/products/detail/toshiba-semiconductor-and-storage/TC74HC04APF/870457"
 			(at 80.01 50.8 0)
 			(effects
 				(font
@@ -5955,6 +6090,15 @@
 				(hide yes)
 			)
 		)
+		(property "Purchase Link" "https://www.digikey.com/en/products/detail/toshiba-semiconductor-and-storage/TC74HC04APF/870457"
+			(at 208.28 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "12"
 			(uuid "e7c51803-8d2a-49c4-9947-10d8dc3b25c0")
 		)
@@ -6008,7 +6152,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 114.3 163.83 0)
+		(at 147.32 163.83 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6017,7 +6161,7 @@
 		(fields_autoplaced yes)
 		(uuid "c563b177-0184-499e-9911-b60397fb887e")
 		(property "Reference" "#PWR029"
-			(at 114.3 167.64 0)
+			(at 147.32 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6026,7 +6170,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 114.3 158.75 0)
+			(at 147.32 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6034,7 +6178,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 114.3 163.83 0)
+			(at 147.32 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6043,7 +6187,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 114.3 163.83 0)
+			(at 147.32 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6052,7 +6196,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 114.3 163.83 0)
+			(at 147.32 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6140,7 +6284,7 @@
 	)
 	(symbol
 		(lib_id "74xx:74HC04")
-		(at 92.71 186.69 0)
+		(at 125.73 186.69 0)
 		(unit 2)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6149,7 +6293,7 @@
 		(fields_autoplaced yes)
 		(uuid "cdcf36b0-9c5f-444e-a93f-6439c634c8b2")
 		(property "Reference" "U10"
-			(at 92.71 177.8 0)
+			(at 125.73 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6157,7 +6301,7 @@
 			)
 		)
 		(property "Value" "TC74HC04APF"
-			(at 92.71 180.34 0)
+			(at 125.73 180.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6165,7 +6309,7 @@
 			)
 		)
 		(property "Footprint" "Package_DIP:DIP-14_W7.62mm_LongPads"
-			(at 92.71 186.69 0)
+			(at 125.73 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6174,7 +6318,7 @@
 			)
 		)
 		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/889/TC74HC04.pdf"
-			(at 92.71 186.69 0)
+			(at 125.73 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6183,7 +6327,16 @@
 			)
 		)
 		(property "Description" "Hex Inverter"
-			(at 92.71 186.69 0)
+			(at 125.73 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase Link" "https://www.digikey.com/en/products/detail/toshiba-semiconductor-and-storage/TC74HC04APF/870457"
+			(at 125.73 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6244,7 +6397,7 @@
 	)
 	(symbol
 		(lib_id "74xx:74HC00")
-		(at 124.46 186.69 0)
+		(at 157.48 186.69 0)
 		(unit 2)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6253,7 +6406,7 @@
 		(fields_autoplaced yes)
 		(uuid "d422c92f-6633-4bd2-bb80-d852721dad0b")
 		(property "Reference" "U4"
-			(at 124.4517 177.8 0)
+			(at 157.4717 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6261,7 +6414,7 @@
 			)
 		)
 		(property "Value" "SN74HC00N"
-			(at 124.4517 180.34 0)
+			(at 157.4717 180.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6269,7 +6422,7 @@
 			)
 		)
 		(property "Footprint" "Package_DIP:DIP-14_W7.62mm_LongPads"
-			(at 124.46 186.69 0)
+			(at 157.48 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6278,7 +6431,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/sn74hc00.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&ts=1776325175776&ref_url=https%253A%252F%252Fwww.ti.com%252Fgeneral%252Fdocs%252Fsuppproductinfo.tsp%253FdistId%253D10%2526gotoUrl%253Dhttps%253A%252F%252Fwww.ti.com%252Flit%252Fgpn%252Fsn74hc00"
-			(at 124.46 186.69 0)
+			(at 157.48 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6287,7 +6440,16 @@
 			)
 		)
 		(property "Description" "quad 2-input NAND gate"
-			(at 124.46 186.69 0)
+			(at 157.48 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase Link" "https://www.digikey.com/en/products/detail/texas-instruments/SN74HC00N/277209"
+			(at 157.48 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6399,6 +6561,15 @@
 				(hide yes)
 			)
 		)
+		(property "Purchase Link" "https://www.digikey.com/en/products/detail/texas-instruments/CD4081BE/67323"
+			(at 172.72 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "14"
 			(uuid "4848641f-9ba5-4ae9-aa50-39855fbf52b6")
 		)
@@ -6452,7 +6623,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 52.07 184.15 0)
+		(at 85.09 184.15 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6461,7 +6632,7 @@
 		(fields_autoplaced yes)
 		(uuid "f9ce26fd-7725-4f85-a097-04762b94432c")
 		(property "Reference" "#PWR022"
-			(at 52.07 187.96 0)
+			(at 85.09 187.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6470,7 +6641,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 52.07 179.07 0)
+			(at 85.09 179.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6478,7 +6649,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 52.07 184.15 0)
+			(at 85.09 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6487,7 +6658,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 52.07 184.15 0)
+			(at 85.09 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6496,7 +6667,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 52.07 184.15 0)
+			(at 85.09 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6518,7 +6689,7 @@
 	)
 	(symbol
 		(lib_id "74xx:74HC00")
-		(at 124.46 168.91 0)
+		(at 157.48 168.91 0)
 		(unit 3)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6527,7 +6698,7 @@
 		(fields_autoplaced yes)
 		(uuid "f9dbc791-94f3-4b73-a2b6-debeea938b99")
 		(property "Reference" "U4"
-			(at 124.4517 160.02 0)
+			(at 157.4717 160.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6535,7 +6706,7 @@
 			)
 		)
 		(property "Value" "SN74HC00N"
-			(at 124.4517 162.56 0)
+			(at 157.4717 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6543,7 +6714,7 @@
 			)
 		)
 		(property "Footprint" "Package_DIP:DIP-14_W7.62mm_LongPads"
-			(at 124.46 168.91 0)
+			(at 157.48 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6552,7 +6723,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/sn74hc00.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&ts=1776325175776&ref_url=https%253A%252F%252Fwww.ti.com%252Fgeneral%252Fdocs%252Fsuppproductinfo.tsp%253FdistId%253D10%2526gotoUrl%253Dhttps%253A%252F%252Fwww.ti.com%252Flit%252Fgpn%252Fsn74hc00"
-			(at 124.46 168.91 0)
+			(at 157.48 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6561,7 +6732,16 @@
 			)
 		)
 		(property "Description" "quad 2-input NAND gate"
-			(at 124.46 168.91 0)
+			(at 157.48 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase Link" "https://www.digikey.com/en/products/detail/texas-instruments/SN74HC00N/277209"
+			(at 157.48 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6622,7 +6802,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 81.28 184.15 0)
+		(at 114.3 184.15 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6631,7 +6811,7 @@
 		(fields_autoplaced yes)
 		(uuid "fc697bbd-5ce3-4313-a0b0-946a40502d5e")
 		(property "Reference" "#PWR023"
-			(at 81.28 187.96 0)
+			(at 114.3 187.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6640,7 +6820,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 81.28 179.07 0)
+			(at 114.3 179.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6648,7 +6828,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 81.28 184.15 0)
+			(at 114.3 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6657,7 +6837,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 81.28 184.15 0)
+			(at 114.3 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6666,7 +6846,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 81.28 184.15 0)
+			(at 114.3 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)

@@ -3675,6 +3675,15 @@
 				(hide yes)
 			)
 		)
+		(property "Purchase Link" "https://www.digikey.com/en/products/detail/texas-instruments/CD4042BE/67289"
+			(at 172.72 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "13"
 			(uuid "9fec2393-52da-45cd-a1b5-cd861789f8e2")
 		)
@@ -3737,7 +3746,7 @@
 		(at 109.22 175.26 270)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -3780,6 +3789,15 @@
 		)
 		(property "Description" ""
 			(at 109.22 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase Link" ""
+			(at 109.22 175.26 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3899,6 +3917,15 @@
 				(hide yes)
 			)
 		)
+		(property "Purchase Link" "https://www.digikey.com/en/products/detail/kemet/C0603C104K5RACTU/1465594"
+			(at 44.45 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "d5fe9cb0-28e1-4981-bbc4-b6668098f5f7")
 		)
@@ -3958,6 +3985,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 111.76 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase Link" "https://www.digikey.com/en/products/detail/texas-instruments/CD74HCT164E/38350"
 			(at 111.76 83.82 0)
 			(effects
 				(font
@@ -4130,6 +4166,15 @@
 			)
 		)
 		(property "Description" "capacitor, US symbol"
+			(at 31.75 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase Link" "https://www.digikey.com/en/products/detail/kemet/C0603C104K5RACTU/1465594"
 			(at 31.75 176.53 0)
 			(effects
 				(font
@@ -4406,6 +4451,15 @@
 				(hide yes)
 			)
 		)
+		(property "Purchase Link" "https://www.digikey.com/en/products/detail/kemet/C0603C104K5RACTU/1465594"
+			(at 68.58 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "f86dc41f-0944-44d0-ade7-39c5a0b9374d")
 		)
@@ -4492,7 +4546,7 @@
 		(at 232.41 45.72 0)
 		(unit 2)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -4532,6 +4586,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 232.41 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase Link" ""
 			(at 232.41 45.72 0)
 			(effects
 				(font
@@ -4652,6 +4715,15 @@
 				(hide yes)
 			)
 		)
+		(property "Purchase Link" "https://www.digikey.com/en/products/detail/kemet/C0603C104K5RACTU/1465594"
+			(at 80.01 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "9d21434c-0810-4399-8820-8623df91f32a")
 		)
@@ -4712,6 +4784,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 172.72 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase Link" "https://www.digikey.com/en/products/detail/texas-instruments/CD4042BE/67289"
 			(at 172.72 43.18 0)
 			(effects
 				(font
@@ -4848,7 +4929,7 @@
 		(at 232.41 124.46 0)
 		(unit 2)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -4888,6 +4969,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 232.41 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase Link" ""
 			(at 232.41 124.46 0)
 			(effects
 				(font
@@ -5024,7 +5114,7 @@
 		(at 135.89 175.26 270)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -5067,6 +5157,15 @@
 		)
 		(property "Description" ""
 			(at 135.89 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase Link" ""
+			(at 135.89 175.26 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5178,6 +5277,15 @@
 			)
 		)
 		(property "Description" "capacitor, US symbol"
+			(at 57.15 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase Link" "https://www.digikey.com/en/products/detail/kemet/C0603C104K5RACTU/1465594"
 			(at 57.15 176.53 0)
 			(effects
 				(font
