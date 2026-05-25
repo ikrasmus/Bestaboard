@@ -4,6 +4,12 @@
 	(generator_version "9.0")
 	(uuid "5039b7cf-d90e-40f5-bdd1-dbb07d32947f")
 	(paper "A4")
+	(title_block
+		(title "Bestaboard")
+		(date "2026-05-21")
+		(rev "A")
+		(company "Isaac Rasmusson")
+	)
 	(lib_symbols
 		(symbol "4xxx:4081"
 			(pin_names
