@@ -15,23 +15,24 @@ The control module switches between two states, homing and character. When homin
 ## Cost Analysis
 The Vestaboard has 132 characters. In order to scale the Bestaboard to a similar character total, the cost per character has to be kept low. An incomplete analysis below shows that under 10 dollars may be obtainable. Electronics pricing was selected at the 10 qty mark on Digikey, but increased bulk buying would bring this pricing down further. Things not included are the control module board, framing for connecting the display modules together, screws, etc. Most of these costs are quantity of one and would not have a large impact on the total cost.  
 
-Display Module (Cost Per Character):
-Electronics (0.5): $6.30
-Printing Material: $1.83
-PCB(shipping not included): $1.30
-Total(per character): $9.43 
+Display Module (Cost Per Character)
 
-Vestaboard (Cost Per Character):
-Vestaboard: $3499
-Characters: 132
-Total(per character): $26.50
+- Electronics (0.5): $6.30  
+- Printing Material: $1.83
+- PCB(shipping not included): $1.30
+- Total(per character): $9.43 
+
+Vestaboard (Cost Per Character)
+- Vestaboard: $3499
+- Characters: 132
+- Total(per character): $26.50
 
 ## Planned Work 
 1. Add Random List of Words
 2. (Issue #3) Move the stepper inside of the drum. 
 3. (Issue #3) Mount display PCBs on a back wall. 
 4. (Issue #3) Mount display modules to a floor.
-5. (Issue #4) Create a PCB control module. 
+5. Create a PCB control module. 
 
 ## Issues
 1. The detection of home is too large, the first character "A" appears as tough the drum is homed. If the protype is powered up at "A", it appears that the display is already homed and will start from that position instead of home. This results in the wrong character being displayed the first time around. The problem has been primarily been mitigated through two software changes. 
@@ -42,4 +43,10 @@ Total(per character): $26.50
 
 2. The simplified homing procedure, where all steppers are rotated until all displays are homed but stopped by hardware, allows the stepper position maintained by the controller to get out of synch of the stepper motor. At slow speed this shows up as some displays not rotating for awhile, but isn't noticable at faster speeds. This is a source of error for positioning the display as it can take up to 7 attempted stepper positions before the control module and stepper are synch and rotation starts. There are 85.33 steps between each character and the targeted point is the middle of the displayed character. So in ~42 steps the next character should start being displayed. This error causes the position to be up to -7 steps off, with ~42 steps in each direction to the next character this is a significant source of error. However, the margin appears to handle the error without a problem. A hardware change would have to take place to remove the error, with the error not manifesting itself and the goal of keepings costs low, there isn't a plan to resolve this issue. 
 
-3. When display modules are mounted together, accessing individual components takes excessive disassembly. You have to start on the end of the row and work your way back. This scales very poorly to having the long rows that are required. Completing planned work 2-4 will allow any display module to be removed with minimal amount of work, regardless of its position in the row.
+3. When display modules are mounted together, accessing individual components takes excessive disassembly. You have to start on the end of the row and work your way back. This scales very poorly for the long rows that are required. Completing planned work 2-4 will allow any display module to be removed with minimal amount of work, regardless of its position in the row.
+
+## Images
+
+![Prototype_vA_4char_front](Prototype_vA_4char_front.jpg)
+![Prototype_vA_4char_back](Prototype_vA_4char_back.jpg)
+![PCB_vA](PCB_vA.png)
