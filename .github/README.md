@@ -29,6 +29,7 @@ Vestaboard (Cost Per Character)
 
 ## Planned Work 
 1. Add Random List of Words
+2. (Issue #1) Move the homing magnet location to be more centered on the displayed character.
 2. (Issue #3) Move the stepper inside of the drum. 
 3. (Issue #3) Mount display PCBs on a back wall. 
 4. (Issue #3) Mount display modules to a floor.
