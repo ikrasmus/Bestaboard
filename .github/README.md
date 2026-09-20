@@ -5,12 +5,20 @@ Bestaboard is a personal project with the goal of imitating the functionality of
 
 The control module switches between two states, homing and character. When homing the home signal is held high, signaling all display modules they need to return to home. Home is identified as the location where a blank character is displayed and sensed when a magnet on the rotating drum gets within range of the magnetic sensor on the frame. While homing the control module is continuously attempting to rotate all the stepper motors until the All_Homed signal has been received. Logic gates on the PCB stop the strobe signal when the display has reached home. The All_Homed signal is driven by a chain of AND gates of the current display and the display to the left, when all displays have reached the home position the All_Homed signal goes high. When going to a character the control module calculates how many rotations of the stepper motor need to occur to get to the desired character. 
 
+## Images
+
+Depicted below is a front and back view of a 4-character vA prototype, along with the display module PCB. Two display modules are connected together to create the 4-character Bestaboard prototype, they are connected both through headers and brackets. The last display module has the All_Homed signal tied high through a jumper wire, as there is no module to the right to drive this signal. On the first display module, a prototype control module is attatched to control and power both the display modules.
+
+![Prototype_vA_4char_front](Prototype_vA_4char_front.jpg)
+![Prototype_vA_4char_back](Prototype_vA_4char_back.jpg)
+![PCB_vA](PCB_vA.png)
+
 ### Digital Signals
 1. Data(O) - Sent in tandem with the Shift signal, position data for the stepper motors.
 2. Shift(O) - Send in tandem with the Data signal, shifts the data signal onto the shift register.
 3. Strobe(O) - Passes the shift register data to the stepper motors.
 4. Home(O) - Indicates homing is taking place, enables hardware strobe gating to stop each display from rotating once it has arrived home.
-5. All_Homed(I) - The output of every homed sensor AND'd together, indicating all displays are homed and the homing process can end. 
+5. All_Homed(I) - The output of every homed sensor AND'd together, indicating all displays to the right of the module are homed and the homing process can end. 
 
 ## Cost Analysis
 The Vestaboard has 132 characters. In order to scale the Bestaboard to a similar character total, the cost per character has to be kept low. An incomplete analysis below shows that under 10 dollars may be obtainable. Electronics pricing was selected at the 10 qty mark on Digikey, but increased bulk buying would bring this pricing down further. Things not included are the control module board, framing for connecting the display modules together, screws, etc. Most of these costs are quantity of one and would not have a large impact on the total cost.  
@@ -45,9 +53,3 @@ Vestaboard (Cost Per Character)
 2. The simplified homing procedure, where all steppers are rotated until all displays are homed but stopped by hardware, allows the stepper position maintained by the controller to get out of synch of the stepper motor. At slow speed this shows up as some displays not rotating for awhile, but isn't noticable at faster speeds. This is a source of error for positioning the display as it can take up to 7 attempted stepper positions before the control module and stepper are synch and rotation starts. There are 85.33 steps between each character and the targeted point is the middle of the displayed character. So in ~42 steps the next character should start being displayed. This error causes the position to be up to -7 steps off, with ~42 steps in each direction to the next character this is a significant source of error. However, the margin appears to handle the error without a problem. A hardware change would have to take place to remove the error, with the error not manifesting itself and the goal of keepings costs low, there isn't a plan to resolve this issue. 
 
 3. When display modules are mounted together, accessing individual components takes excessive disassembly. You have to start on the end of the row and work your way back. This scales very poorly for the long rows that are required. Completing planned work 2-4 will allow any display module to be removed with minimal amount of work, regardless of its position in the row.
-
-## Images
-
-![Prototype_vA_4char_front](Prototype_vA_4char_front.jpg)
-![Prototype_vA_4char_back](Prototype_vA_4char_back.jpg)
-![PCB_vA](PCB_vA.png)
